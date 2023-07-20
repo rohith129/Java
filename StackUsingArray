@@ -1,0 +1,81 @@
+package stacks;
+import java.util.Scanner;
+
+class StackO
+{
+	int top;
+	int max=20;
+	int st[]=new int[max];
+	StackO()
+	{
+		top=-1;
+	}
+	void push(Scanner s)
+	{
+		if(top==max-1)
+		{
+			System.out.println("Stack is Overflow");
+		}
+		else
+		{
+			System.out.print("Enter the element:");
+			int ele=s.nextInt();
+			top++;
+			st[top]=ele;
+		}
+	}
+	void pop()
+	{
+		if(top==-1)
+		{
+			System.out.println("Stack is Empty");
+		}
+		else
+		{
+			int a=st[top];
+			top--;
+			System.out.println("Popped element is:"+a);
+		}
+	}
+	void display()
+	{
+		for(int i=top;i>=0;i--)
+		{
+			System.out.print(st[i]+"->");
+		}
+	}
+}
+public class stack {
+
+	public static void main(String[] args) {
+		int ch;
+		Scanner s=new Scanner(System.in);
+		StackO ab=new StackO();
+		boolean c=true;
+		while(c)
+		{
+			System.out.println("*****MENU*****");
+			System.out.println("1.Push\n2.Pop\n3.Display\n4.Exit");
+			System.out.println("Enter your choice:");
+			ch=s.nextInt();
+			switch(ch)
+			{
+			case 1:
+				ab.push(s);
+				break;
+			case 2:
+				ab.pop();
+				break;
+			case 3:
+				ab.display();
+				break;
+			case 4:
+				c=false;
+				break;
+			default:
+					System.out.println("Invalid Choice");
+			}
+		}
+	}
+
+}
