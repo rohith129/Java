@@ -1,0 +1,93 @@
+package stacks;
+import java.util.Scanner;
+
+class Que
+{
+	Scanner a=new Scanner(System.in);
+	Que()
+	{
+		int front=-1;
+		int back=-1;
+	}
+	int front,back,max=20;
+	int qu[]=new int[max];
+	void enque()
+	{
+		if(back==max-1)
+		{
+			System.out.println("Queue is overflow");
+		}
+		else
+		{
+			int ele;
+			System.out.print("Enter the element to insert:");
+			ele=a.nextInt();
+			back++;
+			qu[back]=ele;
+		}
+	}
+	void deque()
+	{
+		if(front==-1)
+		{
+			System.out.println("Queue is underflow");
+		}
+		else
+		{
+			int el;
+			el=qu[front];
+			front++;
+			System.out.println("Deleted Element is:"+el);
+		}
+	}
+	void display()
+	{
+		if(front==back)
+		{
+			System.out.println("Queue is underflow");
+		}
+		else
+		{
+			for(int j=front+1;j<=back;j++)
+			{
+				System.out.print(qu[j]+"->");
+		}
+		System.out.println();
+	}
+	}
+}
+public class Queue {
+
+	public static void main(String[] args) {
+		int ch;
+		Scanner s=new Scanner(System.in);
+		Que b=new Que();
+		boolean c=true;
+		while(c)
+		{
+			System.out.println("*****MENU*****");
+			System.out.println("1.Enque\n2.Deque\n3.Display\n4.Exit");
+			System.out.println("Enter your choice:");
+			ch=s.nextInt();
+			switch(ch)
+			{
+			case 1:
+				b.enque();
+				break;
+			case 2:
+				b.deque();
+				break;
+			case 3:
+				b.display();
+				break;
+			case 4:
+				c=false;
+				break;
+			default:
+					System.out.println("Invalid Choice");
+			}
+
+	}
+
+}
+}
