@@ -1,18 +1,15 @@
-package stacks;
-
 import java.util.Scanner;
 
-class Que
+class Queue
 {
-	Scanner a=new Scanner(System.in);
-	Que()
+	Queue()
 	{
 		int front=-1;
 		int back=-1;
 	}
 	int front,back,max=20;
 	int qu[]=new int[max];
-	void enque()
+	void enque(Scanner s)
 	{
 		if(back==max-1)
 		{
@@ -22,7 +19,7 @@ class Que
 		{
 			int ele;
 			System.out.print("Enter the element to insert:");
-			ele=a.nextInt();
+			ele=s.nextInt();
 			back++;
 			qu[back]=ele;
 		}
@@ -57,14 +54,13 @@ class Que
 	}
 	}
 }
-public class Queue {
+public class QueueUsingArray {
 
 	public static void main(String[] args) {
 		int ch;
 		Scanner s=new Scanner(System.in);
-		Que b=new Que();
-		boolean c=true;
-		while(c)
+		Queue b=new Queue();
+		while(true)
 		{
 			System.out.println("*****MENU*****");
 			System.out.println("1.Enque\n2.Deque\n3.Display\n4.Exit");
@@ -73,7 +69,7 @@ public class Queue {
 			switch(ch)
 			{
 			case 1:
-				b.enque();
+				b.enque(s);
 				break;
 			case 2:
 				b.deque();
@@ -82,7 +78,7 @@ public class Queue {
 				b.display();
 				break;
 			case 4:
-				c=false;
+				System.exit(0);
 				break;
 			default:
 					System.out.println("Invalid Choice");
