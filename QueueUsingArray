@@ -1,4 +1,5 @@
 package stacks;
+
 import java.util.Scanner;
 
 class Que
@@ -35,8 +36,8 @@ class Que
 		else
 		{
 			int el;
-			el=qu[front];
 			front++;
+			el=qu[front];
 			System.out.println("Deleted Element is:"+el);
 		}
 	}
@@ -67,7 +68,7 @@ public class Queue {
 		{
 			System.out.println("*****MENU*****");
 			System.out.println("1.Enque\n2.Deque\n3.Display\n4.Exit");
-			System.out.println("Enter your choice:");
+			System.out.print("Enter your choice:");
 			ch=s.nextInt();
 			switch(ch)
 			{
